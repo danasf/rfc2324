@@ -1,4 +1,5 @@
 import RPi.GPIO as gpio
+import time
 
 class Brew(object):
 	"""Manage a coffee pot"""
@@ -30,3 +31,5 @@ class Brew(object):
 			print "Invalid temperature"
 
 	def temp_stabilizer(self):
+
+
