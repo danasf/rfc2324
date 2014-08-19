@@ -1,7 +1,7 @@
 # RFC2324 at Hacker School
 from flask import Flask, request
 import random
-#import Brew
+from brew import Brew
 
 
 hot_beverages = ('coffee','tea','hot cocoa','yerba mate', 'spiced cider')
@@ -10,7 +10,7 @@ hot_beverages = ('coffee','tea','hot cocoa','yerba mate', 'spiced cider')
 app = Flask(__name__)
 
 # init the hardware control
-#io = Brew(100,16)
+io = Brew(100,16)
 
 @app.route('/',methods=['GET','BREW','POST'])
 def index():	
@@ -23,10 +23,10 @@ def index():
 
 		if request.form['coffee-message-body'] == "start":
 			res_body = "Brewing " + your_hot_beverage
-		
+			io.set_pin(True)
 		elif request.form['coffee-message-body'] == "stop":
 			res_body = "Ok, stopping the brewing process"
-		
+			io.set_pin(False)
 		else:
 			res_body ="Nope"
 	

@@ -1,4 +1,5 @@
 
+A silly implementation of RFC2324, the hyper-text coffee pot control protocol
 
 Hardware
 
@@ -8,5 +9,9 @@ Hardware
 
 Software
 
-* Modified HTTP server 
+* Modified Flask HTTP server 
+
+To do
+
 * Browser extension or modified browser to support coffee:// and tea:// 
+* Implement PID / temperature control 
